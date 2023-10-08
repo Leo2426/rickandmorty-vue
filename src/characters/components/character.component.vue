@@ -11,9 +11,14 @@ defineProps({
       <template #title> {{ character.name}}</template>
       <template #content>
         <img :src="character.image" alt="">
-        <h4> {{character.species}} </h4>
-        <p>{{character.location.name}}</p>
       </template>
+      <template #footer >
+        <div class="footer">
+          <pv-tag class="mr-2 mb-2" severity="info">{{character.species}}</pv-tag>
+          <pv-tag severity="warning" >{{character.location.name === 'Earth (Replacement Dimension)'? 'Eart' : character.location.name  }}</pv-tag>
+        </div>
+      </template>
+
     </pv-card>
 </template>
 
@@ -22,8 +27,10 @@ defineProps({
   width: 80%;
   text-align: center;
   color: #2b3467;
+  font-size: 80%;
   /* Estilos adicionales aquí */
 }
+
 
 .card img {
   width: 80%;

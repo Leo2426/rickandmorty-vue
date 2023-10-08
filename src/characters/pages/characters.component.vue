@@ -40,9 +40,32 @@ export default {
 <style scoped>
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem; /* Espacio entre elementos de la cuadrícula */
   width: 100%;
   justify-items: center;
 }
+
+/*Responsive*/
+@media only screen and (max-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+@media only screen and (min-width: 601px) and (max-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+@media only screen and (min-width: 1201px) {
+  .cards {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+
 </style>
